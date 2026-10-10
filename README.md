@@ -10,6 +10,7 @@ verlangt.
 | `index.html`        | Hilfe und Kontakt        | Support-URL, Marketing-URL      |
 | `datenschutz.html`  | Datenschutzerklärung     | Datenschutz-URL                 |
 | `nutzungsbedingungen.html` | Nutzungsbedingungen, Vesta Plus | Link in der App-Beschreibung; die Paywall öffnet sie |
+| `freund/index.html` | Linkseite für Einladungen (Spec 040) | Jeder geteilte Einladungslink `…/freund/#CODE`; Adresse nie ändern |
 
 Der Inhalt beschreibt bewusst genau das, was die App tut, nicht mehr: was auf
 dem Gerät bleibt, was der Freunde-Feed überträgt und wann eine Kopie stirbt.

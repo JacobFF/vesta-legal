@@ -15,7 +15,7 @@
 
 <h1>Datenschutzerklärung</h1>
 <p class="lede">Vesta ist so gebaut, dass fast nichts das Gerät verlässt. Diese Seite sagt, was das genau heißt, und benennt die drei Stellen, an denen doch etwas hinausgeht: den Freunde&#8209;Tab, die verschlüsselte Sicherung mit Vesta Plus und die Prüfung, ob du Vesta Plus gekauft hast.</p>
-<p class="meta">Stand: 2. Oktober 2026</p>
+<p class="meta">Stand: 10. Oktober 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <div class="card">
@@ -60,7 +60,7 @@
 <p>Ein Konto ist freiwillig. Anmelden kannst du dich beim Einrichten der App, im Freunde&#8209;Tab oder in den Einstellungen, oder du lässt es. Das Konto dient zwei Dingen: dem Freunde&#8209;Tab (Abschnitt 5) und der Sicherung (Abschnitt 6). Alles Übrige an der App funktioniert ohne.</p>
 
 <h3>Anmeldung</h3>
-<p>Die Anmeldung läuft über „Mit Apple anmelden" oder „Mit Google anmelden". Dabei entsteht ein Konto mit einer Kennung und der E&#8209;Mail&#8209;Adresse, die der jeweilige Dienst übermittelt. Bei „Mit Apple anmelden" kannst du deine Adresse verbergen; dann erhält Vesta nur die Weiterleitungsadresse von Apple. Ein Passwort speichert Vesta nie. Die Sitzung liegt im Schlüsselbund deines Geräts. Kennung und E&#8209;Mail&#8209;Adresse liegen auf dem Server, bis du das Konto löschst (Abschnitt 11).</p>
+<p>Die Anmeldung läuft über „Mit Apple anmelden" oder „Mit Google anmelden". Dabei entsteht ein Konto mit einer Kennung und der E&#8209;Mail&#8209;Adresse, die der jeweilige Dienst übermittelt. Bei „Mit Apple anmelden" kannst du deine Adresse verbergen; dann erhält Vesta nur die Weiterleitungsadresse von Apple. Ein Passwort speichert Vesta nie. Die Sitzung liegt im Schlüsselbund deines Geräts. Kennung und E&#8209;Mail&#8209;Adresse liegen auf dem Server, bis du das Konto löschst (Abschnitt 12).</p>
 
 <h3>Auftragsverarbeiter</h3>
 <p>Server, Datenbank, Anmeldung und Dateispeicher für Konto, Freunde&#8209;Tab und Sicherung betreibt Supabase (<a href="https://supabase.com/privacy">supabase.com/privacy</a>) im Auftrag des Verantwortlichen. Die Datenbank und der Dateispeicher liegen in einem Rechenzentrum in Irland (AWS&#8209;Region eu&#8209;west&#8209;1), also innerhalb der Europ&auml;ischen Union. Es besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO. Soweit dabei Daten in ein Land außerhalb der Europäischen Union übermittelt werden, geschieht das auf Grundlage der Standardvertragsklauseln der Europäischen Kommission nach Art. 46 Abs. 2 lit. c DSGVO.</p>
@@ -130,7 +130,7 @@
 <p>Meldest du dich auf einem iPhone an, auf dem dein Schlüssel im iCloud&#8209;Schlüsselbund liegt, lädt Vesta eine vorhandene Sicherung von selbst, auch ohne Vesta Plus. Was auf dem Gerät schon liegt, bleibt und kommt dazu.</p>
 
 <h3>Abmelden und Ende von Plus</h3>
-<p>Abmelden hält die Sicherung an. Die Kopien auf dem Server bleiben, bis du dich wieder anmeldest, die Sicherung ausschaltest, das Konto löschst oder eine der Fristen aus Abschnitt 10 abläuft.</p>
+<p>Abmelden hält die Sicherung an. Die Kopien auf dem Server bleiben, bis du dich wieder anmeldest, die Sicherung ausschaltest, das Konto löschst oder eine der Fristen aus Abschnitt 11 abläuft.</p>
 <p>Endet Vesta Plus, sichert Vesta nichts Neues mehr. Die Sicherung wird 60 Tage nach dem Ende von Plus gelöscht; die App sagt das sofort und noch einmal sieben Tage vor dem Löschdatum. Bis dahin lässt sie sich weiter laden. Kommt Plus innerhalb der Frist zurück, läuft sie weiter, wo sie stand.</p>
 
 <h2>7. Käufe: Vesta Plus</h2>
@@ -156,21 +156,39 @@
 <h3>Löschen</h3>
 <p>RevenueCat bewahrt Kennung und Kaufbelege auf, solange Vesta den Dienst nutzt, damit sich ein Kauf jederzeit wiederherstellen lässt. Willst du sie vorher löschen lassen, schreib an <a href="mailto:info@betep-agency.de">info@betep-agency.de</a> und nenn die Bestellnummer aus Apples Kaufbeleg; daran lässt sich der Eintrag finden. Ein gelöschter Eintrag heißt nicht, dass ein Abo endet: kündigen kannst du nur bei Apple. Was Apple selbst über den Kauf aufbewahrt, regelt Apples Datenschutzrichtlinie.</p>
 
-<h2>8. Meldungen und Moderation</h2>
+<h2>8. Einladungen</h2>
+<p>Im Freunde&#8209;Tab kannst du einen Einladungslink teilen. Sobald zwei Freunde, die neu bei Vesta sind, ein Konto angelegt und dich hinzugefügt haben, bekommst du Vesta Plus geschenkt. Die Bedingungen stehen in den <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>, Abschnitt 8.</p>
+
+<h3>Was der Server dafür festhält</h3>
+<div class="scroll">
+<table>
+<tr><th>Daten</th><th>Wann</th><th>Wie lange</th></tr>
+<tr><td>Welches Konto welches neue Konto eingeladen hat, und wann</td><td>Wenn zwischen beiden eine Freundschaftsanfrage entsteht und das jüngere Konto höchstens 14 Tage alt ist</td><td>Bis eines der beiden Konten gelöscht wird</td></tr>
+<tr><td>Dass ein Konto Vesta Plus geschenkt bekommen hat, und wann</td><td>Bei der zweiten gezählten Einladung</td><td>Bis dieses Konto gelöscht wird</td></tr>
+</table>
+</div>
+<p>Beides entsteht auf dem Server aus der Freundschaft selbst. Dein Gerät schickt dafür nichts Zusätzliches. Lesen kann diese Daten nur der Server; die App erfährt daraus, wie viele deiner Einladungen gezählt haben, ob dir Plus gehört und die Anzeigenamen der beiden Freunde, mit denen du es bekommen hast. Wer eingeladen wurde, erfährt nicht, dass er gezählt hat. Der Zweck ist allein das Geschenk: kein Ranking, keine Werbung, keine Auswertung über einzelne Personen.</p>
+
+<h3>Die Linkseite</h3>
+<p>Der Einladungslink führt auf eine statische Seite bei GitHub Pages, die genauso ausgeliefert wird wie diese hier. Dein Code steht im Link hinter dem Zeichen „#". Diesen Teil schickt ein Browser nie an einen Server; er bleibt auf dem Gerät, das den Link öffnet. Die Seite setzt keine Cookies, lädt nichts von Dritten und erhebt keine Daten. Tippt jemand auf „Vesta laden", legt die Seite den Link in die Zwischenablage dieses Geräts. Vesta liest die Zwischenablage nur, wenn im Freunde&#8209;Tab jemand selbst auf „Einfügen" tippt.</p>
+<p>Den Link selbst teilst du über das Teilen&#8209;Menü von iOS, mit der App, die du dort wählst. Vesta erfährt nicht, wem du ihn schickst.</p>
+
+<h2>9. Meldungen und Moderation</h2>
 <p>An jedem Beitrag im Feed liegen „Melden" und „Blockieren". Eine Meldung überträgt die Kennung des Beitrags, deine Kennung als meldende Person und den gewählten Grund, damit der Beitrag geprüft werden kann. Wer blockiert ist, sieht deine Beiträge nicht mehr und du seine nicht.</p>
 
-<h2>9. Rechtsgrundlagen</h2>
+<h2>10. Rechtsgrundlagen</h2>
 <ul>
   <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> für alles, was den Freunde&#8209;Tab überhaupt möglich macht: Konto, Freundschaften, Zustellung der Beiträge. Ohne diese Verarbeitung gibt es die Funktion nicht.</li>
   <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> für die Sicherung: Speichern, Laden und Löschen deiner verschlüsselten Daten und Fotos. Sie ist Teil von Vesta Plus und lässt sich jederzeit ausschalten.</li>
   <li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> für die Freigabe einer Gewohnheit an Freunde, für den Zugriff auf Kamera, Fotos und Apple Health und für Benachrichtigungen. Jede dieser Einwilligungen ist einzeln und jederzeit widerrufbar, in der App oder in den iOS&#8209;Einstellungen.</li>
   <li><strong>Art. 9 Abs. 2 lit. a DSGVO</strong> für Gesundheitsdaten aus Apple Health. Die einzelnen Messwerte werden ausschließlich auf dem Gerät verarbeitet. Den Tageswert einer verknüpften Gewohnheit sichert Vesta nur mit deiner ausdrücklichen Einwilligung, die du im Blatt „Sicherung einschalten?" oder im Blatt „Apple&#8209;Health&#8209;Werte mitsichern?" gibst. Widerrufen kannst du sie, indem du die Sicherung ausschaltest; die gesicherten Werte werden dann sofort gelöscht.</li>
   <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> für die Prüfung eines Kaufs von Vesta Plus und für die Anzeige der Preise vor einem Kauf: ohne sie lässt sich der Vertrag nicht erfüllen.</li>
+  <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> für die Einladungen: ohne die Zuordnung, wer wen eingeladen hat, lässt sich das versprochene Geschenk nicht geben.</li>
   <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> für die Bearbeitung von Meldungen. Das berechtigte Interesse ist ein Feed ohne rechtswidrige Inhalte.</li>
   <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> für die Verbindung zu RevenueCat, solange du nichts gekauft hast, und für die zusammengefassten Kaufübersichten. Das berechtigte Interesse ist, einen Kauf zuverlässig zu erkennen, auch nach einem Gerätewechsel, und zu wissen, wie sich Vesta Plus trägt.</li>
 </ul>
 
-<h2>10. Speicherdauer</h2>
+<h2>11. Speicherdauer</h2>
 <ul>
   <li>Daten auf dem Gerät: bis du sie löschst oder die App entfernst.</li>
   <li>Beiträge und ihre Fotos im Freunde&#8209;Tab: höchstens 24 Stunden, danach automatisch gelöscht.</li>
@@ -179,24 +197,26 @@
   <li>Endet Vesta Plus: Die Sicherung wird 60 Tage danach gelöscht, wenn Plus bis dahin nicht zurückkommt.</li>
   <li>Meldet sich 13 Monate lang kein Gerät mit Vesta Plus bei der Sicherung, wird sie ebenso gelöscht.</li>
   <li>Abgebrochene Uploads der Sicherung: nach 24 Stunden.</li>
+  <li>Wer wen eingeladen hat: bis eines der beiden Konten gelöscht wird. Das geschenkte Plus: bis du dein Konto löschst.</li>
   <li>Kennung und Kaufbelege bei RevenueCat: solange Vesta den Dienst nutzt, oder bis du die Löschung verlangst (Abschnitt 7).</li>
 </ul>
 
-<h2>11. Konto löschen</h2>
-<p>In den Einstellungen der App liegt auf der Karte „Konto" der Knopf „Konto löschen". Er löscht dein Konto samt Anmeldung, deinen Anzeigenamen, deinen Code, alle Freundschaften, alle freigegebenen Serien, alle noch offenen Beiträge samt Fotos und deine Sicherung samt aller gesicherten Fotos vom Server, endgültig und ohne Wartezeit. Dafür braucht die App eine Verbindung. Deine Gewohnheiten, Einträge und Fotos auf dem Gerät bleiben davon unberührt: Vesta funktioniert danach weiter wie vorher, nur ohne Freunde&#8209;Tab und ohne Sicherung.</p>
+<h2>12. Konto löschen</h2>
+<p>In den Einstellungen der App liegt auf der Karte „Konto" der Knopf „Konto löschen". Er löscht dein Konto samt Anmeldung, deinen Anzeigenamen, deinen Code, alle Freundschaften, alle freigegebenen Serien, alle noch offenen Beiträge samt Fotos, deine Einladungen samt geschenktem Plus und deine Sicherung samt aller gesicherten Fotos vom Server, endgültig und ohne Wartezeit. Dafür braucht die App eine Verbindung. Deine Gewohnheiten, Einträge und Fotos auf dem Gerät bleiben davon unberührt: Vesta funktioniert danach weiter wie vorher, nur ohne Freunde&#8209;Tab und ohne Sicherung.</p>
 <p>Willst du nur die Sicherung loswerden, schalte sie aus (Abschnitt 6). Kommst du nicht mehr an die App heran, beschreibt die Seite <a href="loeschung.html">Konto löschen</a> den Weg per E&#8209;Mail.</p>
 
-<h2>12. Deine Rechte</h2>
+<h2>13. Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Eine erteilte Einwilligung kannst du jederzeit widerrufen, ohne dass die bis dahin erfolgte Verarbeitung dadurch unrechtmäßig wird.</p>
-<p>Schreib für eine Anfrage an <a href="mailto:info@betep-agency.de">info@betep-agency.de</a>. Für Daten, die nur auf deinem Gerät liegen, kann der Verantwortliche keine Auskunft geben, weil er keinen Zugriff darauf hat. Dasselbe gilt für den Inhalt deiner Sicherung: er ist verschlüsselt, und den Schlüssel hast nur du. Auskunft gibt es über alles, was unverschlüsselt vorliegt (Abschnitte 4 bis 6).</p>
+<p>Schreib für eine Anfrage an <a href="mailto:info@betep-agency.de">info@betep-agency.de</a>. Für Daten, die nur auf deinem Gerät liegen, kann der Verantwortliche keine Auskunft geben, weil er keinen Zugriff darauf hat. Dasselbe gilt für den Inhalt deiner Sicherung: er ist verschlüsselt, und den Schlüssel hast nur du. Auskunft gibt es über alles, was unverschlüsselt vorliegt (Abschnitte 4 bis 6 und 8).</p>
 <p>Du kannst dich außerdem bei einer Aufsichtsbehörde beschweren. Zuständig ist das Bayerische Landesamt für Datenschutzaufsicht, Promenade 18, 91522 Ansbach.</p>
 
-<h2>13. Kinder</h2>
+<h2>14. Kinder</h2>
 <p>Vesta ist nicht für Kinder gemacht und erhebt bewusst keine Daten von Kindern. Der Freunde&#8209;Tab funktioniert nur zwischen Personen, die sich gegenseitig bestätigt haben.</p>
 
-<h2>14. Änderungen</h2>
+<h2>15. Änderungen</h2>
 <p>Ändert sich, wie Vesta mit Daten umgeht, wird diese Seite geändert und das Datum oben angepasst. Wesentliche Änderungen am Freunde&#8209;Tab und an der Sicherung werden in der App angezeigt.</p>
-<p><strong>2. Oktober 2026:</strong> Neu ist die verschlüsselte Sicherung mit Vesta Plus (Abschnitt 6). Ein Konto lässt sich jetzt auch beim Einrichten und in den Einstellungen anlegen und dient dem Freunde&#8209;Tab und der Sicherung (Abschnitt 4). „Konto löschen" entfernt auch die Sicherung (Abschnitt 11).</p>
+<p><strong>2. Oktober 2026:</strong> Neu ist die verschlüsselte Sicherung mit Vesta Plus (Abschnitt 6). Ein Konto lässt sich jetzt auch beim Einrichten und in den Einstellungen anlegen und dient dem Freunde&#8209;Tab und der Sicherung (Abschnitt 4). „Konto löschen" entfernt auch die Sicherung (Abschnitt 12).</p>
+<p><strong>10. Oktober 2026:</strong> Neu sind die Einladungen und das geschenkte Vesta Plus (Abschnitt 8).</p>
 
 <footer class="bottom">
   <a href="./">Hilfe und Kontakt</a>
