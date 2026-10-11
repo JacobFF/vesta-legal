@@ -31,7 +31,7 @@
 <p class="lede">Vesta hakt eine Gewohnheit erst ab, wenn ein Foto daneben liegt. Mit Freunden seht ihr gegenseitig eure Serien und die Beweise des Tages.</p>
 
 <p id="incomplete" hidden>Dieser Einladungslink ist unvollständig. Frag nach dem Code.</p>
-<p id="iphone-only" hidden>Vesta gibt es bisher nur für iPhone.</p>
+<p id="phone-only" hidden>Vesta gibt es für iPhone und Android. Öffne diesen Link auf deinem Telefon.</p>
 
 <div id="actions" class="actions">
   <a id="load" class="button" href="https://apps.apple.com/app/id6800996310">Vesta laden</a>
@@ -59,7 +59,8 @@
   var ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   var LENGTH = 8;
   var PAGE = 'https://jacobff.github.io/vesta-legal/freund/';
-  var STORE = 'https://apps.apple.com/app/id6800996310';
+  var APP_STORE = 'https://apps.apple.com/app/id6800996310';
+  var PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.jacobforstner.vesta';
 
   function readCode() {
     var raw = location.hash.slice(1);
@@ -83,12 +84,16 @@
     return /Macintosh/.test(agent) && navigator.maxTouchPoints > 1;
   }
 
+  function isAndroid() {
+    return /Android/.test(navigator.userAgent || '');
+  }
+
   function show(id) {
     document.getElementById(id).hidden = false;
   }
 
   var code = readCode();
-  var ios = isIOS();
+  var store = isIOS() ? APP_STORE : isAndroid() ? PLAY_STORE : null;
 
   if (code) {
     document.getElementById('code').textContent = code.slice(0, 4) + ' · ' + code.slice(4);
@@ -97,11 +102,13 @@
     show('incomplete');
   }
 
-  if (!ios) {
+  if (!store) {
     document.getElementById('actions').hidden = true;
-    show('iphone-only');
+    show('phone-only');
     return;
   }
+
+  document.getElementById('load').href = store;
 
   if (!code) return;
 
@@ -110,9 +117,10 @@
   show('open');
   show('clipboard-note');
 
-  // Safari only lets a page write the clipboard inside the tap itself. A
-  // browser that has no clipboard or refuses still goes to the App Store:
-  // the code stays on this page, and the link opens Vesta once installed.
+  // Safari and Chrome only let a page write the clipboard inside the tap
+  // itself. A browser that has no clipboard or refuses still goes to the
+  // store: the code stays on this page, and the link opens Vesta once
+  // installed.
   document.getElementById('load').addEventListener('click', function (event) {
     if (!navigator.clipboard || !navigator.clipboard.writeText) return;
     event.preventDefault();
@@ -120,7 +128,7 @@
     function go() {
       if (gone) return;
       gone = true;
-      location.href = STORE;
+      location.href = store;
     }
     try {
       navigator.clipboard.writeText(PAGE + '#' + code).then(go, go);
