@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Einladung zu Vesta</title>
+<meta name="description" content="Hol dir Vesta und füg deinen Freund mit einem Tipp hinzu. Gewohnheiten mit Fotobeweis.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vesta">
+<meta property="og:title" content="Einladung zu Vesta">
+<meta property="og:description" content="Hol dir Vesta und füg deinen Freund mit einem Tipp hinzu. Gewohnheiten mit Fotobeweis.">
+<meta property="og:url" content="https://jacobff.github.io/vesta-legal/freund/">
+<meta property="og:image" content="https://jacobff.github.io/vesta-legal/freund/vesta.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Das App-Symbol von Vesta">
+<meta name="twitter:card" content="summary">
+<link rel="apple-touch-icon" href="vesta.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../"><strong>Vesta</strong> <span>Gewohnheiten mit Fotobeweis</span></a>
+</header>
+
+<h1>Du bist zu Vesta eingeladen</h1>
+<p class="lede">Vesta hakt eine Gewohnheit erst ab, wenn ein Foto daneben liegt. Mit Freunden seht ihr gegenseitig eure Serien und die Beweise des Tages.</p>
+
+<p id="incomplete" hidden>Dieser Einladungslink ist unvollständig. Frag nach dem Code.</p>
+<p id="iphone-only" hidden>Vesta gibt es bisher nur für iPhone.</p>
+
+<div id="actions" class="actions">
+  <a id="load" class="button" href="https://apps.apple.com/app/id6800996310">Vesta laden</a>
+  <p id="clipboard-note" class="meta" hidden>Wir legen deine Einladung in die Zwischenablage. In Vesta findest du sie unter Freunde mit „Einsetzen“.</p>
+  <a id="open" class="button secondary" href="vesta://freund/" hidden>Schon installiert? In Vesta öffnen</a>
+</div>
+
+<div id="code-card" class="card" hidden>
+  <p class="meta">Code</p>
+  <p id="code" class="code"></p>
+  <p class="meta">Oder in Vesta unter Freunde › Freund hinzufügen eingeben.</p>
+</div>
+
+<footer class="bottom">
+  <a href="../">Hilfe und Kontakt</a>
+  <a href="../datenschutz.html">Datenschutzerklärung</a>
+  <a href="../impressum.html">Impressum</a>
+</footer>
+
+</div>
+<script>
+// The code sits in the fragment, which a browser never sends to the server.
+// Same alphabet and length as the app (src/features/friends/code.ts).
+(function () {
+  var ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var LENGTH = 8;
+  var PAGE = 'https://jacobff.github.io/vesta-legal/freund/';
+  var STORE = 'https://apps.apple.com/app/id6800996310';
+
+  function readCode() {
+    var raw = location.hash.slice(1);
+    try {
+      raw = decodeURIComponent(raw);
+    } catch (error) {
+      return null;
+    }
+    var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (code.length !== LENGTH) return null;
+    for (var i = 0; i < code.length; i += 1) {
+      if (ALPHABET.indexOf(code.charAt(i)) < 0) return null;
+    }
+    return code;
+  }
+
+  function isIOS() {
+    var agent = navigator.userAgent || '';
+    if (/iPhone|iPad|iPod/.test(agent)) return true;
+    // iPadOS Safari reports itself as a Mac; only the touch screen tells.
+    return /Macintosh/.test(agent) && navigator.maxTouchPoints > 1;
+  }
+
+  function show(id) {
+    document.getElementById(id).hidden = false;
+  }
+
+  var code = readCode();
+  var ios = isIOS();
+
+  if (code) {
+    document.getElementById('code').textContent = code.slice(0, 4) + ' · ' + code.slice(4);
+    show('code-card');
+  } else {
+    show('incomplete');
+  }
+
+  if (!ios) {
+    document.getElementById('actions').hidden = true;
+    show('iphone-only');
+    return;
+  }
+
+  if (!code) return;
+
+  var open = document.getElementById('open');
+  open.href = 'vesta://freund/' + code;
+  show('open');
+  show('clipboard-note');
+
+  // Safari only lets a page write the clipboard inside the tap itself. A
+  // browser that has no clipboard or refuses still goes to the App Store:
+  // the code stays on this page, and the link opens Vesta once installed.
+  document.getElementById('load').addEventListener('click', function (event) {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+    event.preventDefault();
+    var gone = false;
+    function go() {
+      if (gone) return;
+      gone = true;
+      location.href = STORE;
+    }
+    try {
+      navigator.clipboard.writeText(PAGE + '#' + code).then(go, go);
+    } catch (error) {
+      go();
+      return;
+    }
+    setTimeout(go, 1500);
+  });
+})();
+</script>
+</body>
+</html>

@@ -102,3 +102,35 @@ footer.bottom {
 }
 
 footer.bottom a { margin-right: 1.25rem; }
+
+/* The invitation page (freund/): two buttons and the code to type. */
+
+.actions { margin: 1.5rem 0; }
+
+.button {
+  display: block;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  margin: 0 0 0.75rem;
+  border: 1px solid var(--ember);
+  border-radius: 4px;
+  background: var(--ember);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--ember);
+}
+
+.code {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.5rem;
+}
+
+[hidden] { display: none !important; }
